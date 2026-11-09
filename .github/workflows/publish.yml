@@ -1,0 +1,44 @@
+name: Publish Windows update
+on:
+  workflow_dispatch:
+    inputs:
+      signed_artifact_url:
+        description: Short-lived signed download URL of the tested installer-only artifact
+        type: string
+        required: true
+      artifact_sha256:
+        description: SHA256 reported by GitHub for that artifact
+        type: string
+        required: true
+      source_run_id:
+        description: Successful private Windows build run ID (validated by the release operator)
+        type: string
+        required: true
+      source_commit:
+        description: Exact private source commit validated by the release operator
+        type: string
+        required: true
+      expected_version:
+        description: Stable app version, for example 0.2.0
+        type: string
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: windows-update-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check PyYAML==6.0.3
+      # Read dispatch inputs from GITHUB_EVENT_PATH. Do not interpolate the signed
+      # URL into the command or an env block: GitHub prints these before masking.
+      - name: Verify installer artifact and publish new stable version
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/publish.py
