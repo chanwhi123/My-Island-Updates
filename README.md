@@ -2,7 +2,13 @@
 
 This repository distributes My Island Windows installation files and automatic-update metadata. The application source repository remains private.
 
-After the first approved release is published, the latest installer is available under [Releases](../../releases/latest). No release is available until the publication workflow has completed successfully.
+## 다운로드
+
+**[Windows 설치 파일 받기 (0.2.1)](https://github.com/chanwhi123/My-Island-Updates/releases/download/v0.2.1/My-Island-0.2.1-Windows-x64.exe)** · [최신 릴리스](https://github.com/chanwhi123/My-Island-Updates/releases/latest)
+
+기존 앱은 이 설치 파일로 최초 한 번 전환합니다. 이후 새 버전은 앱이 자동 확인·다운로드하고, **다시 시작하여 설치**를 누르면 설치됩니다. 설정의 **소프트웨어 업데이트**에서 확인할 수 있습니다.
+
+Chrome 개발자 모드 확장의 자동 업데이트는 별도 웹 스토어 등록 후 지원됩니다.
 
 Automatic update feed:
 
@@ -19,12 +25,5 @@ The release operator validates the private source build's workflow, successful r
 The operator must dispatch each approved release. This workflow does not poll a private repository or automatically publish every private source commit. Once a release is published, installed app clients discover it automatically through the feed.
 
 Do not place source archives, signing keys, browser pairing codes, GitHub tokens, or customer data in an artifact supplied to this workflow. Ordinary workflow access is restricted by GitHub repository write permissions. The signed artifact URL is read from the event payload, masked before download, and never deliberately logged. It expires shortly after dispatch.
-
-## Validation
-
-```sh
-python -m pip install PyYAML==6.0.3
-python -m unittest discover -s tests
-```
 
 Current development installers may be unsigned. Downloading an installer does not grant it permission to run automatically. The app downloads a new version and offers an explicit restart-and-install action.
