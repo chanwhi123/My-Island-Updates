@@ -4,9 +4,11 @@ This repository distributes My Island Windows installation files and automatic-u
 
 ## 다운로드
 
-**[Windows 설치 파일 받기 (0.2.1)](https://github.com/chanwhi123/My-Island-Updates/releases/download/v0.2.1/My-Island-0.2.1-Windows-x64.exe)** · [최신 릴리스](https://github.com/chanwhi123/My-Island-Updates/releases/latest)
+**[Windows 설치 파일 받기 (0.2.2)](https://github.com/chanwhi123/My-Island-Updates/releases/download/v0.2.2/My-Island-0.2.2-Windows-x64.exe)** · [최신 릴리스](https://github.com/chanwhi123/My-Island-Updates/releases/latest)
 
-기존 앱은 이 설치 파일로 최초 한 번 전환합니다. 이후 새 버전은 앱이 자동 확인·다운로드하고, **다시 시작하여 설치**를 누르면 설치됩니다. 설정의 **소프트웨어 업데이트**에서 확인할 수 있습니다.
+0.2.2는 화면 위쪽에 붙은 검은 노치와 어두운 메뉴를 적용했습니다. 노치를 클릭해 메뉴를 열고 다시 클릭하거나 Esc로 접습니다.
+
+기존 0.2.1 사용자는 앱 설정의 소프트웨어 업데이트에서 받을 수 있습니다. 이전 초기 버전은 이 설치 파일로 최초 한 번 전환합니다. 이후 새 버전은 앱이 자동 확인·다운로드하고, **다시 시작하여 설치**를 누르면 설치됩니다. 설정의 **소프트웨어 업데이트**에서 확인할 수 있습니다.
 
 Chrome 개발자 모드 확장의 자동 업데이트는 별도 웹 스토어 등록 후 지원됩니다.
 
